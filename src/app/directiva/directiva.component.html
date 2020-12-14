@@ -1,0 +1,27 @@
+<button (click)="alternar()">Alternar</button>
+<div *ngIf="!loading">
+    <p>Pagina Cargada</p>
+</div>
+<br>
+
+<img *ngIf="loading" [src]="imagenLoader" >
+
+<!-- <div *ngFor="let producto of productos" class="producto">
+    <p>Producto: {{producto.nombre}}</p>
+    <p>stock: {{producto.stock}}</p>
+    <p>Distribuidor: {{producto.fabricante}}</p>
+    <p>Fecha vencimiento: {{producto.fechaVencimiento}}</p>
+</div> -->
+
+<div class="tab" [ngSwitch]="pestana">
+    <button (click)="cambiarPestana('perfil')">Perfil</button>
+    <button (click)="cambiarPestana('puntos')">Puntos</button>
+    <button (click)="cambiarPestana('info')">Info</button>
+
+    <div class="tab-contenido">
+        <p *ngSwitchCase="'perfil'">Este es el perfil</p>
+        <p *ngSwitchCase="'puntos'">Son los puntos</p>
+        <p *ngSwitchCase="'info'">Esta es la info</p>
+        <p *ngSwitchDefault>Seleccione una opcion</p>
+    </div>
+</div>

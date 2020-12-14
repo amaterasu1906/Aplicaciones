@@ -1,0 +1,16 @@
+<p>Hola : {{nombre}}</p>
+
+<img (dblclick)="hablar()" [src]="imagenKokomi">
+<!-- <img [src]="imagenMisaki"> -->
+
+<br>
+<label for="">Email:
+    <input type="text" [(ngModel)] = "email">
+</label>
+<label for="">Contraseña:
+    <input type="password" (ngModelChange)="mostrarCambios()" [(ngModel)] = "password">
+</label>
+<button (click)="ingresar()">Ingresar</button>
+
+<br>
+<input type="text" (focus)="cambiarFondo($event)" (input)="escribir($event)">
